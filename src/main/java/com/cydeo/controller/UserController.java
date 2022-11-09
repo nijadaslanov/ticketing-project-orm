@@ -46,7 +46,7 @@ public class UserController {
         }
 
         userService.save(user);
-        return "redirect:/user/create";
+        return "redirect:" + "/user/create";
 
     }
 
@@ -74,7 +74,7 @@ public class UserController {
         }
 
         userService.update(user);
-        return "redirect:/user/create";
+        return "redirect:" + "/user/create";
 
     }
 
@@ -82,7 +82,7 @@ public class UserController {
     public String deleteUser(@PathVariable("username") String username) {
 //        userService.deleteByUserName(username);
         userService.delete(username);
-        return "redirect:/user/create";
+        return "redirect:" + "/user/create";
     }
 
 }

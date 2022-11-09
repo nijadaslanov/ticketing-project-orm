@@ -48,7 +48,7 @@ public class ProjectController {
         }
 
         projectService.save(project);
-        return "redirect:/project/create";
+        return "redirect:" + "/project/create";
 
     }
 //
