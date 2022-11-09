@@ -9,13 +9,13 @@ import org.springframework.context.annotation.Bean;
 public class TicketingProjectOrmApplication {
 
     public static void main(String[] args) {
+
         SpringApplication.run(TicketingProjectOrmApplication.class, args);
     }
 
     @Bean
-    public ModelMapper mapper() {
+    public ModelMapper mapper(){
         return new ModelMapper();
     }
-
 
 }
