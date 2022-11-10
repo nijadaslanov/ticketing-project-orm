@@ -88,11 +88,9 @@ public class ProjectServiceImpl implements ProjectService {
     public List<ProjectDTO> listAllProjectDetails() {
 
         UserDTO currentUserDTO = userService.findByUserName("harold@manager.com");
-
         User user = userMapper.convertToEntity(currentUserDTO);
 
         List<Project> list = projectRepository.findAllByAssignedManager(user);
-
 
         return list.stream().map(project -> {
 
@@ -100,6 +98,7 @@ public class ProjectServiceImpl implements ProjectService {
 
             obj.setUnfinishedTaskCounts(taskService.totalNonCompletedTask(project.getProjectCode()));
             obj.setCompleteTaskCounts(taskService.totalCompletedTask(project.getProjectCode()));
+
 
             return obj;
 
