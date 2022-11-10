@@ -82,6 +82,7 @@ public class ProjectServiceImpl implements ProjectService {
         Project project = projectRepository.findByProjectCode(projectCode);
         project.setProjectStatus(Status.COMPLETE);
         projectRepository.save(project);
+        taskService.completeByProject(projectMapper.convertToDto(project));
 
 
     }
@@ -107,4 +108,14 @@ public class ProjectServiceImpl implements ProjectService {
 
         }).collect(Collectors.toList());
     }
+
+    @Override
+    public List<ProjectDTO> readAllByAssignedManager(User assignedManger) {
+
+        List<Project> list = projectRepository.findAllByAssignedManager(assignedManger);
+        return list.stream().map(projectMapper::convertToDto).collect(Collectors.toList());
+
+    }
+
+
 }

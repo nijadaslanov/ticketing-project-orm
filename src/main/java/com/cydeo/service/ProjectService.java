@@ -1,6 +1,8 @@
 package com.cydeo.service;
 
 import com.cydeo.dto.ProjectDTO;
+import com.cydeo.entity.User;
+
 
 import java.util.List;
 
@@ -21,4 +23,5 @@ public interface ProjectService {
     List<ProjectDTO> listAllProjectDetails();
 
 
+    List<ProjectDTO> readAllByAssignedManager(User assignedManger);
 }

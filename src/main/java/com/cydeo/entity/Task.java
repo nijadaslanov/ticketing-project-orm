@@ -33,31 +33,4 @@ public class Task extends BaseEntity {
     private Project project;
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 }
